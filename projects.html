@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Tim Cheese Holdings LLC</title>
+    <!-- Linking to Google Fonts for a timeless, elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles: Consistent black and gold aesthetic with a luxurious feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Deep black background */
+            color: #e6e6e6; /* Light gray for readability */
+            line-height: 1.6;
+        }
+
+        /* Header Section: Simple header with shining gold accents */
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d); /* Subtle black gradient */
+            color: #d4af37; /* Gold text */
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            animation: pulse 12s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.2; }
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Navigation Bar: Consistent with index.html, sticky, with shining gold hover effects */
+        nav {
+            background-color: rgba(26, 26, 26, 0.95); /* Deep black, semi-transparent */
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold on hover */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 3s infinite linear;
+        }
+
+        /* Projects Section: Centered message with elegant styling */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 3s infinite linear;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #b3b3b3; /* Muted gray for text */
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer: Consistent with index.html, timeless with shining gold accents */
+        footer {
+            background-color: #1a1a1a; /* Deep black */
+            color: #d4af37; /* Gold text */
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95em;
+            border-top: 1px solid #d4af37; /* Gold border */
+        }
+
+        footer p {
+            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 3s infinite linear;
+        }
+
+        /* Responsive Design: Adjustments for smaller screens */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 12px 0;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            section p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar: Sticky, elegant, with shining gold hover effects -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header: Simple header for projects page -->
+    <header>
+        <h1>Projects</h1>
+    </header>
+
+    <!-- Projects Section: Message indicating no current projects -->
+    <section id="projects">
+        <h2>No Current Projects</h2>
+        <p>Tim Cheese Holdings LLC is currently in the planning phase for new digital initiatives. Please check back soon for updates on our upcoming projects.</p>
+    </section>
+
+    <!-- Footer: Timeless with shining gold accents -->
+    <footer>
+        <p>&copy; 2025 Tim Cheese Holdings LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
