@@ -4,377 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim Cheese Holdings LLC</title>
-    <!-- Linking to Google Fonts for a timeless, elegant typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global styles: Timeless black and gold aesthetic with a luxurious feel */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Deep black background */
-            color: #e6e6e6; /* Light gray for readability */
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: #ffd700;
+        }
+        header {
+            background: #000000;
+            color: #ffd700;
+            text-align: center;
+            padding: 3em 0;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+        }
+        header p {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+        }
+        nav {
+            background: #1a1a1a;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 1.5em;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            text-shadow: 0 0 8px #ffd700;
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .container h2 {
+            font-size: 2em;
+            text-shadow: 0 0 5px #ffd700;
+        }
+        .container p {
+            font-size: 1.1em;
             line-height: 1.6;
         }
-
-        /* Header and Hero Section: Elegant black with shining gold accents */
-        header {
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d); /* Subtle black gradient */
-            color: #d4af37; /* Gold text */
-            text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
-            overflow: hidden;
+        .cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffec8b);
+            color: #000000;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1em;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
         }
-
-        header::before {
-            content: '';
-            position: absolute;
+        .cta:hover {
+            background: linear-gradient(45deg, #ffec8b, #ffd700);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            transform: scale(1.05);
+        }
+        .tos-modal {
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            animation: pulse 12s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.2; }
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8em;
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: shine 3s infinite linear;
-        }
-
-        @keyframes shine {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            max-width: 700px;
-            margin: 20px auto 30px;
-            opacity: 0.85;
-        }
-
-        /* Our Projects Button: Large, prominent, with shining gold effect */
-        .hero .projects-button {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 1.4em;
-            font-weight: 600;
-            text-decoration: none;
-            color: #1a1a1a;
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            animation: shine 3s infinite linear;
-        }
-
-        .hero .projects-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
-        }
-
-        /* Navigation Bar: Sleek, sticky, with shining gold hover effects */
-        nav {
-            background-color: rgba(26, 26, 26, 0.95); /* Deep black, semi-transparent */
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-
-        nav li {
-            margin: 0 20px;
-        }
-
-        nav a {
-            color: #e6e6e6;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a:hover {
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold on hover */
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: shine 3s infinite linear;
-        }
-
-        /* Sections: Clean layout with max-width for readability */
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
+        .tos-modal-content {
+            background: #000000;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            border: 2px solid #ffd700;
+            max-width: 500px;
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            position: relative;
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: shine 3s infinite linear;
         }
-
-        section h2::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .tos-modal-content h2 {
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+            margin-top: 0;
         }
-
-        /* About Quality Section: Elegant with a subtle dark background */
-        #about-quality {
-            background-color: #262626; /* Slightly lighter black for contrast */
-            border-radius: 12px;
-            padding: 60px 20px;
+        .tos-modal-content p {
+            margin: 1em 0;
         }
-
-        #about-quality p {
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1.1em;
-            color: #b3b3b3;
+        .tos-modal-content a {
+            color: #ffd700;
+            text-decoration: underline;
         }
-
-        /* Contact Section: Elegant with a subtle dark background */
-        #contact {
-            background-color: #262626; /* Slightly lighter black for contrast */
-            border-radius: 12px;
-            padding: 60px 20px;
+        .tos-modal-content button {
+            background: linear-gradient(45deg, #ffd700, #ffec8b);
+            color: #000000;
+            padding: 0.6em 1.2em;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0.5em;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
         }
-
-        #contact p {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1em;
-            color: #b3b3b3;
+        .tos-modal-content button:hover {
+            background: linear-gradient(45deg, #ffec8b, #ffd700);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            transform: scale(1.05);
         }
-
-        /* Footer: Timeless with shining gold accents */
         footer {
-            background-color: #1a1a1a; /* Deep black */
-            color: #d4af37; /* Gold text */
+            background: #000000;
+            color: #ffd700;
             text-align: center;
-            padding: 25px;
-            font-size: 0.95em;
-            border-top: 1px solid #d4af37; /* Gold border */
-        }
-
-        footer p {
-            background: linear-gradient(45deg, #d4af37, #ffd700); /* Shining gold gradient */
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: shine 3s infinite linear;
-        }
-
-        /* Responsive Design: Adjustments for smaller screens */
-        @media (max-width: 768px) {
-            header {
-                padding: 80px 15px 60px;
-            }
-
-            .hero h1 {
-                font-size: 2.8em;
-            }
-
-            .hero p {
-                font-size: 1.1em;
-            }
-
-            .hero .projects-button {
-                padding: 12px 30px;
-                font-size: 1.2em;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav li {
-                margin: 12px 0;
-            }
-
-            section {
-                padding: 50px 15px;
-            }
-
-            section h2 {
-                font-size: 2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .hero .projects-button {
-                padding: 10px 25px;
-                font-size: 1.1em;
-            }
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar: Sticky, elegant, with shining gold hover effects -->
-    <nav>
-        <ul>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="#contact">Terms of Service</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Header: Luxurious black with shining gold accents and prominent projects button -->
-    <header>
-        <div class="hero">
-            <h1>Tim Cheese Holdings LLC</h1>
-            <p>Ventura-based technology company developing, managing, and supporting innovative digital projects. We operate entirely online and do not provide in-person services.</p>
-            <a href="projects.html" class="projects-button">Our Projects</a>
+    <div class="tos-modal" id="tosModal">
+        <div class="tos-modal-content">
+            <h2>Terms of Service Agreement</h2>
+            <p>By continuing, you agree to our <a href="/tos.html" target="_blank">Terms of Service</a>. Please review them carefully.</p>
+            <button onclick="acceptTos()">I Agree</button>
+            <button onclick="declineTos()">Decline</button>
         </div>
+    </div>
+    <header>
+        <h1>Tim Cheese Holdings LLC</h1>
+        <p>Ventura-based innovators in digital excellence</p>
     </header>
-
-    <!-- About Quality Section: Displays the essay content -->
-    <section id="about-quality">
-        <h2>Our Commitment to Quality</h2>
-        <p>At Tim Cheese Holdings LLC, quality is the cornerstone of our mission to deliver exceptional digital solutions. Operating exclusively online, our Ventura-based technology company is dedicated to creating innovative projects that meet the highest standards of excellence. Our approach to quality is rooted in precision, creativity, and a relentless pursuit of perfection, ensuring that every project we undertake reflects our commitment to surpassing client expectations.</p>
-        <p>Our process begins with a meticulous focus on planning and design. We invest significant time in understanding the unique needs of each project, collaborating closely with our clients to define clear objectives and deliverables. By leveraging cutting-edge technologies and industry best practices, we build robust, scalable, and user-centric digital solutions. Our team of skilled developers, designers, and project managers employs rigorous testing protocols to ensure that every line of code, every interface, and every feature functions flawlessly across diverse platforms and devices.</p>
-        <p>Quality at Tim Cheese Holdings extends beyond technical execution. We prioritize transparent communication and agile methodologies, allowing us to adapt swiftly to evolving requirements while maintaining strict quality control. Regular checkpoints and iterative feedback loops ensure that our deliverables align with our clients’ visions, delivering not just functional products but transformative digital experiences. Our online-only model enhances our efficiency, enabling us to focus resources on perfecting the development process without the overhead of physical operations.</p>
-        <p>We also recognize that quality is an ongoing commitment. Post-launch, we provide comprehensive support and maintenance to ensure our projects remain secure, up-to-date, and optimized for performance. By staying at the forefront of technological advancements, we continuously refine our methods to deliver solutions that are not only current but future-proof. At Tim Cheese Holdings LLC, our dedication to quality is unwavering, driving us to create digital projects that set the standard for innovation and excellence in the technology industry.</p>
-    </section>
-
-    <!-- Contact Section: Elegant, centered, with a dark background -->
-    <section id="contact">
-        <h2>TOS</h2>
-        <p>Terms of Service
-
-Effective Date: September 7, 2025
-
-Welcome to Tim Cheese Holdings LLC ("we," "us," or "our"). By accessing or using our website, services, or any digital solutions provided by Tim Cheese Holdings LLC, a Ventura-based technology company operating exclusively online, you agree to be bound by these Terms of Service ("TOS"). If you do not agree to these terms, you may not access or use our services or solutions.
-
-1. Scope of Services
-
-Tim Cheese Holdings LLC develops, manages, and supports innovative digital projects. Our solutions are provided solely under demo releases unless otherwise specified. These demo releases are intended for evaluation purposes only and may not be used for commercial, operational, or production purposes without explicit written consent from Tim Cheese Holdings LLC.
-
-2. Restricted Access to Beta Releases
-
-Beta releases and pre-release versions of our solutions are exclusively available to authorized investors of Tim Cheese Holdings LLC. Access to beta releases is strictly limited to these individuals or entities, and any unauthorized use, distribution, or access is expressly prohibited. Investors granted access to beta releases must adhere to any additional terms or agreements provided at the time of access.
-
-3. Ownership of Projects
-
-Tim Cheese Holdings LLC retains full and exclusive ownership of all intellectual property, code, designs, and other materials related to our projects and solutions. This includes, but is not limited to, all demo releases, beta releases, and any associated documentation or assets. Users and investors are granted limited, non-exclusive, non-transferable licenses to access or use our solutions solely for their intended purposes (e.g., demo evaluation or investor beta testing). No ownership rights are transferred under any circumstances.
-
-4. Use Restrictions
-
-You may not:
-
-
-
-
-
-Modify, reverse-engineer, decompile, or attempt to derive the source code of our solutions.
-
-
-
-Distribute, sublicense, or share demo or beta releases with unauthorized parties.
-
-
-
-Use our solutions for any purpose other than their explicitly stated intent (e.g., demo evaluation or investor beta testing).
-
-
-
-Attempt to gain unauthorized access to our systems, networks, or solutions. Violation of these restrictions may result in immediate termination of access and potential legal action.
-
-5. Intellectual Property
-
-All content, including but not limited to software, designs, text, graphics, and other materials provided through our website or solutions, is the sole property of Tim Cheese Holdings LLC or its licensors. Unauthorized use of our intellectual property is strictly prohibited and may result in legal action.
-
-6. Limitation of Liability
-
-Our solutions are provided "as is" without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. Tim Cheese Holdings LLC shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use or inability to use our solutions, even if advised of the possibility of such damages.
-
-7. Termination
-
-We reserve the right to terminate or suspend access to our solutions or website at our sole discretion, without notice, for any conduct that we believe violates these TOS or is harmful to our interests or those of other users.
-
-8. Governing Law
-
-These TOS shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law principles. Any disputes arising under these TOS shall be resolved in the state or federal courts located in Ventura County, California.
-
-9. Changes to the Terms
-
-We may update these TOS from time to time to reflect changes in our practices or legal requirements. The updated version will be posted on our website with the effective date. Continued use of our services after such changes constitutes your acceptance of the revised terms.
-
-
-By using our website or solutions, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
-</p>
-    </section>
-
-    <!-- Footer: Timeless with shining gold accents -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/tos.html">Terms of Service</a>
+    </nav>
+    <div class="container">
+        <h2>Welcome to Tim Cheese Holdings</h2>
+        <p>We craft cutting-edge digital projects with a focus on quality, innovation, and precision. From planning to execution, our team delivers exceptional online experiences.</p>
+        <a href="/projects.html" class="cta">Explore Our Projects</a>
+    </div>
     <footer>
         <p>&copy; 2025 Tim Cheese Holdings LLC. All rights reserved.</p>
     </footer>
+    <script>
+        function acceptTos() {
+            localStorage.setItem('tosAccepted', 'true');
+            document.getElementById('tosModal').style.display = 'none';
+        }
+
+        function declineTos() {
+            window.location.href = 'https://www.google.com'; // Redirect to neutral page
+        }
+
+        window.onload = function() {
+            if (!localStorage.getItem('tosAccepted')) {
+                document.getElementById('tosModal').style.display = 'flex';
+            }
+        };
+    </script>
 </body>
 </html>
